@@ -46,7 +46,7 @@ add_library( appbase
              ${HEADERS}
            )
 
-target_link_libraries( appbase ${Boost_LIBRARIES})
+target_link_libraries( appbase ${Boost_LIBRARIES} pthread)
 
 target_include_directories( appbase
                             PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include" ${Boost_INCLUDE_DIR})
@@ -75,4 +75,4 @@ install( TARGETS
 )
 install_directory_permissions( DIRECTORY ${CMAKE_INSTALL_FULL_INCLUDEDIR}/appbase )
 
-#add_subdirectory( examples )
+add_subdirectory( examples )
